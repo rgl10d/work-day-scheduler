@@ -1,8 +1,7 @@
 $(document).ready(function (){
     var schedule = $("#schedule");
-    var now = moment().format("MMM Do YYYY");
+    var now = moment();
     var hour = ["9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"];
-    console.log(now);
 
     // Function Definitions
     
@@ -14,18 +13,24 @@ $(document).ready(function (){
             var saveBtn = $("<button>").attr("class", "saveBtn").text("Save");
             var parsedHour = moment(hour[i], "hh a");
 
+            if(now.hour() === parsedHour.hour()){
+                row.attr("class", "row present");
+            } else if(now.hour() < parsedHour.hour()){
+                row.attr("class", "row future");
+            } else if(now.hour() > parsedHour.hour()){
+                row.attr("class", "row past");
+            }
+
             schedule.append(row);
             row.append(hourEl);
             row.append(textArea);
             row.append(saveBtn);
-            console.log(hour[i]);
         }
     }
 
     // Function calls
-    $("#currentDay").text(now);
+    $("#currentDay").text(now.format("MMM Do YYYY"));
     lineRender();
-    currentDay();
 
     // Event Listeners
 })
