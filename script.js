@@ -1,5 +1,4 @@
 $(document).ready(function (){
-    var schedule = $("#schedule");
     var now = moment();
     var hour = ["9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"];
 
@@ -9,19 +8,19 @@ $(document).ready(function (){
         for(var i = 0; i < hour.length; i++){
             var row = $("<div>").attr("class", "row");
             var hourEl = $("<div>").attr("class", "hour").text(hour[i]);
-            var textArea = $("<textarea>").attr("class", "appointment");
+            var textArea = $("<textarea>");
             var saveBtn = $("<button>").attr("class", "saveBtn").text("Save");
             var parsedHour = moment(hour[i], "hh a");
 
             if(now.hour() === parsedHour.hour()){
-                row.attr("class", "row present");
+                textArea.attr("class", "present");
             } else if(now.hour() < parsedHour.hour()){
-                row.attr("class", "row future");
+                textArea.attr("class", "future");
             } else if(now.hour() > parsedHour.hour()){
-                row.attr("class", "row past");
+                textArea.attr("class", "past");
             }
 
-            schedule.append(row);
+            $("#schedule").append(row);
             row.append(hourEl);
             row.append(textArea);
             row.append(saveBtn);
@@ -33,6 +32,7 @@ $(document).ready(function (){
     lineRender();
 
     // Event Listeners
+    $()
 })
 
 /**
