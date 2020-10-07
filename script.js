@@ -6,10 +6,9 @@ $(document).ready(function () {
     for (var i = 0; i < hour.length; i++) {
       var textboxId = "textbox" + i;
       var buttonId = "btn" + i;
-      var appointment = localStorage.getItem(textboxId);
       var row = $("<div>").attr("class", "row time-block");
       var hourEl = $("<div>").attr("class", "hour").text(hour[i]);
-      var textArea = $("<textarea>").attr("id", textboxId).text(appointment);
+      var textArea = $("<textarea>").attr("id", textboxId).text(localStorage.getItem(textboxId));
       var saveBtn = $("<button>")
         .attr({
           "class": "saveBtn",
