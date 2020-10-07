@@ -11,11 +11,10 @@ $(document).ready(function () {
       var textArea = $("<textarea>").attr("id", textboxId).text(localStorage.getItem(textboxId));
       var saveBtn = $("<button>")
         .attr({
-          "class": "saveBtn",
+          "class": "saveBtn fas fa-save",
           "id": buttonId,
           "onClick": "saveText('" + textboxId + "')"
         })
-        .text("Save");
       var parsedHour = moment(hour[i], "hh a");
 
       if (now.hour() === parsedHour.hour()) {
