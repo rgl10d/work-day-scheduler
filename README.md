@@ -7,12 +7,12 @@ update with the current date.
 ## Usage
 Simply click in the center of each hour row and start typing our your notes for that hour. When you are finished you can hit the corresponding SAVE button for the row you just filled out,
 this will save your notes to your browser's local storage and will remain even through a page refresh and closing the browser itself. The hours are color coded for:
-** Grey - past hours
-** Red - the current hour
-** Green - future hours
+- Grey - past hours
+- Red - the current hour
+- Green - future hours
 
 ## Website Link
-[Work Day Schedular](https://rgl10d.github.io/work-day-scheduler/)
+[Work Day Scheduler](https://rgl10d.github.io/work-day-scheduler/)
 
 ## License
 MIT License
