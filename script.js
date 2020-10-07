@@ -8,9 +8,10 @@ $(document).ready(function () {
     for (var i = 0; i < hour.length; i++) {
       var textboxId = "textbox" + i;
       var buttonId = "btn" + i;
+      var appointment = localStorage.getItem(textboxId);
       var row = $("<div>").attr("class", "row time-block");
       var hourEl = $("<div>").attr("class", "hour").text(hour[i]);
-      var textArea = $("<textarea>").attr("id", textboxId);
+      var textArea = $("<textarea>").attr("id", textboxId).text(appointment);
       var saveBtn = $("<button>")
         .attr({
           "class": "saveBtn",
@@ -19,7 +20,6 @@ $(document).ready(function () {
         })
         .text("Save");
       var parsedHour = moment(hour[i], "hh a");
-      var appointment = localStorage.getItem(textboxId);
 
       if (now.hour() === parsedHour.hour()) {
         textArea.attr("class", "present");
@@ -33,8 +33,6 @@ $(document).ready(function () {
       row.append(hourEl);
       row.append(textArea);
       row.append(saveBtn);
-      $(textboxId).text(appointment);
-      
     }
   }
 
