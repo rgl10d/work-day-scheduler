@@ -1,9 +1,7 @@
 $(document).ready(function () {
-  // JS Variables
   var now = moment();
   var hour = ["9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM",];
 
-  // Function Definitions
   function lineRender() {
     for (var i = 0; i < hour.length; i++) {
       var textboxId = "textbox" + i;
@@ -36,7 +34,6 @@ $(document).ready(function () {
     }
   }
 
-  // Function calls
   $("#currentDay").text(now.format("MMM Do YYYY"));
   lineRender();
 });
